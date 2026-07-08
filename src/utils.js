@@ -62,8 +62,10 @@ export const dataTotal = async (link) => {
 }
 
 //--- Fonction Selection Card ---
-export const cardSwitch = (centerValue, dataTotal) => {
-
+export const cardSwitch = (centerValue) => {
+  const stepX = 33;
+  const offset = -(centerValue - 1) * stepX;
+  document.querySelector(".cardsGRP").style.transform = `translateX(${offset}vw)`;
 }
 
 // --- Recuperation des donnés ---

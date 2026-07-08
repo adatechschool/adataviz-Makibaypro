@@ -33,7 +33,7 @@ btnLeft.addEventListener("click", () => {
   if(centerValue > 0){
     centerValue -= 1;
     console.log(centerValue);
-    cardSwitch(centerValue, dataTotal);
+    cardSwitch(centerValue);
     btnRight.disabled = false;
   } else {
     btnLeft.disabled = true;
@@ -44,7 +44,7 @@ btnRight.addEventListener("click", () => {
   if(centerValue < dataTotal){
     centerValue += 1;
     console.log(centerValue);
-    cardSwitch(centerValue, dataTotal)
+    cardSwitch(centerValue)
     if(centerValue > 0){
     btnLeft.disabled = false;
     }

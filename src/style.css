@@ -32,12 +32,22 @@
 }
 
 .buttonShape {
-  padding: 30px;
+  padding: 30px 32px;
   width: fit-content;
   border-radius: 600px;
   border: 0px;
   font-size: xx-large;
   color: rgb(11, 29, 109);
+}
+
+.buttonShape:hover {
+  padding: 30px 32px;
+  width: fit-content;
+  border-radius: 600px;
+  border: 0px;
+  font-size: xx-large;
+  color: rgb(11, 29, 109);
+  border: 4px solid var(--bg);
 }
 
 .buttonShape:active{
@@ -47,39 +57,43 @@
 
 .bgImg {
   position: absolute;
+  object-fit: fill;
   z-index: -1;
   filter: blur(10px);
   width: 110vw;
-  height: 110vh;
+  height: 150vh;
   left: -1%;
 }
 
 .bodyGRP {
+  position: relative;
   display: grid;
   grid-template-rows: 75px 1fr 75px;
   grid-auto-rows: auto;
   grid-auto-columns: auto;
   width: 100vw;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .footer {
   height: 100%;
   bottom: 10%;
-  grid-row: 3/4;
+  grid-row: 3;
 }
 
 .mainGRP {
   display: grid;
-  height: 100vh;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr;
   grid-row: 2/3;
+  gap: 100px;
   justify-items: stretch;
   align-items: stretch;
 }
 
 .headerGRP {
+  grid-row: 1;
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   min-height: 0; /* empêche le contenu de forcer la row à grandir */
@@ -130,13 +144,14 @@
 }
 
 .cardsWindow {
-  background: linear-gradient(rgba(255, 0, 0, 0) 0%,rgb(243, 229, 210) 20%, rgb(243, 229, 210) 90%, rgba(255, 0, 0, 0));
-  width: calc(3 * (30vw + 38px));
+  width: calc(3 * (30vw + 38px + 20px));
   overflow: hidden;
   margin: 0 auto;
-  padding: 20px 0px;
+  padding: 30px 0px;
   position: relative;
   align-self: center;
+  grid-row: 1/2;
+  /* transform: translateX(31%); */
 }
 
 .cardsGRP {
@@ -153,14 +168,18 @@
   border: 3px solid white;
   border-radius: 30px;
   text-align: center;
-  width: 30vw;
+  width: 28vw;
   margin: 0px 2.5vw;
   display: grid;
   grid-template-rows: 0.25fr 0.25fr 1fr;
   color: var(--text);
   overflow: hidden;
   flex-shrink: 0; /*Avoiding shrinking due to the size of the container*/
-  box-shadow: 10px 10px 10px black;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.538);
+}
+
+.card:hover {
+  transform: scale(1.05);
 }
 
 .card h2 {
@@ -259,15 +278,17 @@ text-align:left;
 .buttonLeft {
   position: absolute;
   left: 5%;
-  top: 50%;
+  top: 45%;
   margin-left: 20px;
+  z-index: 1;
 }
 
 .buttonRight {
   position: absolute;
   right: 5%;
-  top: 50%;
+  top: 45%;
   margin-right: 20px;
+  z-index: 1;
 }
 
 .map {
