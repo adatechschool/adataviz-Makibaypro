@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style.css">
+    <script type="module" src="/src/main.js" defer></script>
+    <title>adataviz</title>
+  </head>
+  <body class="bodyGRP">
+
+    <img class="bgImg" src="./src/assets/bgImg.png" alt="image de fond"/>
+    <header class="headerGRP elementFG">
+        <img class="logoP" src="./src/assets/parkingLogo.png" alt="logo">
+        <h1 class="headerTitle">Stationnement sur voie publique a Paris</h1>
+
+        <section class="searchGRP">
+          <input class="searchBar" type="text" id="search" name="search" placeholder="rechercher...">
+          <p class="resultAmount">Résultats trouvés :</p>
+          <button type="button" class="filterBTN">Filters</button>
+        </section>
+
+        <section class="filtrePanel cache">
+          <select id="categorie">
+            <option value="">Choisissez la catégorie</option>
+            <option value="2roue">2 Roues</option>
+            <option value="livraison">Livraison</option>
+            <option value="gig/gic">GIG/GIC</option>
+            <option value="mixte">Mixte</option>
+          </select>
+
+          <select id="type">
+            <option value="">Choisissez le type de place</option>
+            <option value="bataille">Bataille</option>
+            <option value="epi">Épi</option>
+            <option value="longitudinale">Longitudinale</option>
+          </select>
+
+          <label for="numberFilter">Nombre de place souhaité :</label>
+          <input type="number" id="numberFilter" name="numberFilter" placeholder="0" class="inputBarre">
+
+          <div>
+            <input class="inputBarre" type="number" id="longueur" name="longueur" placeholder="0m">
+            <p>x</p>
+            <input class="inputBarre" type="number" id="largeur" name="largeur" placeholder="0m">
+          </div>
+
+        </section>
+    </header>
+
+    <main class="mainGRP">
+        <button type="button" class="buttonLeft buttonShape " >←</button>
+        <section class="cardsWindow">
+          <div class="cardsGRP">
+            <!-- <article class="card left">
+              <h2>Nom Voie CarteGauche</h2>
+              
+              <img src="./src/assets/motorcycle.png" alt="PictoPlace" class="imgSide">
+              <dl>
+                <dt class="infosType" >Type de place :</dt>
+                <dd>Livraison</dd>
+
+                <dt class="infosType" >Disposition :</dt>
+                <dd>Longitudinale</dd>
+
+                <dt class="infosType" >Longueur et largeur :</dt>
+                <dd>X mètre x 1,8 mètre</dd>
+
+                <dt class="infosType" >Nb. de place (Approx)</dt>
+                <dd>10</dd>
+              </dl>
+            </article>
+
+            <article class="card center ">
+              <h2>Nom Voie</h2>
+
+              <img src="./src/assets/truck.png" alt="PictoPlace" class="imgCenter">
+
+              <dl class="infos" >
+                <dt class="infosType" >Type de place</dt>
+                <dd>Livraison</dd>
+
+                <dt class="infosType" >Disposition</dt>
+                <dd>Bataille</dd>
+
+                <dt class="infosType" >Longueur</dt>
+                <dd>X mètre</dd>
+
+                <dt class="infosType" >Largeur</dt>
+                <dd>X mètre</dd>
+
+                <dt class="infosType" >Nb. de place (Approx)</dt>
+                <dd>10</dd>
+              </dl>
+            </article>
+
+            <article class="card right">
+              <h2>Nom Voie CarteDroite</h2>
+
+              <img src="./src/assets/car.png" alt="PictoPlace" class="imgSide">
+
+              <dl>
+                <dt class="infosType" >Type de place</dt>
+                <dd>Mixte</dd>
+
+                <dt class="infosType" >Disposition</dt>
+                <dd>Épi</dd>
+
+                <dt class="infosType" >Longueur et largeur</dt>
+                <dd>X mètre x 1,8 mètre</dd>
+
+                <dt class="infosType" >Nb. de place (Approx)</dt>
+                <dd>10</dd>
+              </dl>
+            </article> -->
+          </div>
+        </section>
+        <button type="button" class="buttonRight buttonShape" >→</button>
+        
+        <section class="map">
+
+          <iframe src="https://opendata.paris.fr/explore/embed/dataset/stationnement-sur-voie-publique-emprises/map/?disjunctive.regpri&disjunctive.regpar&disjunctive.typsta&disjunctive.arrond&disjunctive.locsta&disjunctive.zoneres&disjunctive.parite&disjunctive.signhor&disjunctive.signvert&disjunctive.confsign&disjunctive.typemob&sort=-regpri&basemap=jawg.dark&location=12,48.85997,2.35828&static=false&datasetcard=false&scrollWheelZoom=false" width="500" height="400" frameborder="0"></iframe>
+
+        </section>
+    </main>
+
+    <footer class="footer elementFG">
+
+    </footer>
+
+  </body>
+</html>
