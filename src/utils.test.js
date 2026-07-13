@@ -1,4 +1,5 @@
 import {formaterData, cardSwitch, displayCard, filtre, filters } from "./utils.js" 
+import { describe, it, expect } from "vitest";
 
 export const testData = {
   total: 6,
