@@ -19,6 +19,10 @@
   
 }
 
+iframe {
+  border: 6px outset black;
+}
+
 .elementFG {
     background: linear-gradient(var(--primary));
 }
@@ -29,6 +33,22 @@
 
 .imgCenter {
   width: 75px;
+}
+
+.btn  {
+  background-color: rgb(52, 65, 138);
+  border: 2px solid white;
+  border-radius: 3px;
+  color: whitesmoke;
+  padding: 4px;
+}
+
+.applyBTN {
+  background-color: rgb(52, 65, 138);
+  border: 2px double white;
+  border-radius: 3px;
+  color: whitesmoke;
+  padding: 4px;
 }
 
 .buttonShape {
@@ -50,18 +70,15 @@
   border: 4px solid var(--bg);
 }
 
-.buttonShape:active{
+.buttonShape:active {
   background-color: var(--bg);
   color: var(--search);
 }
 
-.bgImg {
-  position: absolute;
+.bg {
+
   object-fit: fill;
   z-index: -1;
-  filter: blur(10px);
-  width: 110vw;
-  height: 150vh;
   left: -1%;
 }
 
@@ -71,9 +88,43 @@
   grid-template-rows: 75px 1fr 75px;
   grid-auto-rows: auto;
   grid-auto-columns: auto;
-  width: 100vw;
+  width: 100%;
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+.bodyGRP::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)),
+    url('./assets/bgImg4.png');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.filterPanel {
+  position: absolute;
+  width: 40%;
+  background-color: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 1;
+  padding: 2% 1%;
+  border: 4px double white;
+  border-radius: 15px;
+  right: 1%;
+  top: 5.5%;
+  gap: 5px;
+  color: white;
+}
+
+.sizeSearch {
+  display: flex;
+  
 }
 
 .footer {
@@ -98,6 +149,12 @@
   grid-template-columns: 1fr 3fr 1fr;
   min-height: 0; /* empêche le contenu de forcer la row à grandir */
   overflow: hidden; /* sécurité si jamais ça dépasse quand même */
+}
+
+.headerGRP h1 {
+  font-style: oblique;
+  text-decoration: underline;
+
 }
 
 .logoP {
@@ -143,21 +200,22 @@
   grid-row: 2;
 }
 
+/* Element fix pour definir la zone d'affichage des cartes */
 .cardsWindow {
-  width: calc(3 * (30vw + 38px + 20px));
+  width: min(calc(3 * 33vw), 100vw);
   overflow: hidden;
   margin: 0 auto;
-  padding: 30px 0px;
+  padding: 40px 0px;
   position: relative;
   align-self: center;
   grid-row: 1/2;
-  /* transform: translateX(31%); */
 }
 
+/* Groupe des cartes pour l'animation */
 .cardsGRP {
   display: flex;
   align-items: center;
-  transition: transform 0.4s ease;
+  transition: transform 0.75s ease-in-out;
 }
 
 .card {
@@ -168,7 +226,7 @@
   border: 3px solid white;
   border-radius: 30px;
   text-align: center;
-  width: 28vw;
+  width: min(28vw, 30%);
   margin: 0px 2.5vw;
   display: grid;
   grid-template-rows: 0.25fr 0.25fr 1fr;
@@ -176,15 +234,15 @@
   overflow: hidden;
   flex-shrink: 0; /*Avoiding shrinking due to the size of the container*/
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.538);
-}
-
-.card:hover {
-  transform: scale(1.05);
+  transition: transform 0.75s ease-in-out
 }
 
 .card h2 {
   grid-row: 1;
+  width: 75%;
+  justify-self: center;
   align-self: center;
+  text-align: center;
 }
 
 .card img {
@@ -195,84 +253,23 @@
 
 .infos {
   grid-row: 3;
-}
-
-.infosType{
-  justify-self: flex-start;
-  margin-left: 3%;
-}
-
-.infosData {
-  justify-self: flex-end;
-  margin-right: 3%;
-}
-
-/* .center {
-  border: 3px solid white;
-  border-radius: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.left{
-  justify-self: center;
-  align-self: center;
-  overflow: hidden;
-  border: 3px solid rgb(87, 87, 87);
-  border-radius: 20px;
-  display: flex;
-
-}
-
-.right {
-  justify-self: center;
-  align-self: center;
-  overflow: hidden;
-  border: 3px solid rgb(87, 87, 87);
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.leftOut {
-  justify-self: flex-end;
-  align-self: center;
-  overflow: hidden;
-  border: 3px solid rgb(87, 87, 87);
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.rightOut {
-  justify-self: flex-start;
-  align-self: center;
-  overflow: hidden;
-  border: 3px solid rgb(87, 87, 87);
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-} */
-
-.infos {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(4 1fr);
   padding: 5px;
-  gap: 5px;
 }
 
-.infosType {
-font-weight: bold;
-text-align:left;
+.infosType{
+  justify-self: flex-start;
+  margin-left: 7%;
+  font-weight: bold;
+  text-align:left;
+}
+
+.infosData {
+  justify-self: flex-start;
+  padding: 0px 50px;
+  margin-right: 3%;
 }
 
 .buttonLeft {

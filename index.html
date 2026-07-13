@@ -8,45 +8,55 @@
     <script type="module" src="/src/main.js" defer></script>
     <title>adataviz</title>
   </head>
+  
   <body class="bodyGRP">
 
-    <img class="bgImg" src="./src/assets/bgImg.png" alt="image de fond"/>
+    <!-- <img class="bgImg" src="./src/assets/bgImg.png" alt="image de fond"/> -->
     <header class="headerGRP elementFG">
         <img class="logoP" src="./src/assets/parkingLogo.png" alt="logo">
         <h1 class="headerTitle">Stationnement sur voie publique a Paris</h1>
 
         <section class="searchGRP">
-          <input class="searchBar" type="text" id="search" name="search" placeholder="rechercher...">
+          <input class="searchBar" type="search" id="search" name="search" placeholder="rechercher...">
           <p class="resultAmount">Résultats trouvés :</p>
-          <button type="button" class="filterBTN">Filters</button>
+          <button type="button" class="filterBTN btn">Filtres</button>
         </section>
 
-        <section class="filtrePanel cache">
-          <select id="categorie">
+        <form class="filterPanel cache">
+
+          <label for="categorie">Catégorie :</label>
+          <select id="categorie" name="categorie">
             <option value="">Choisissez la catégorie</option>
-            <option value="2roue">2 Roues</option>
-            <option value="livraison">Livraison</option>
-            <option value="gig/gic">GIG/GIC</option>
-            <option value="mixte">Mixte</option>
+            <option value="2 ROUES">2 Roues</option>
+            <option value="LIVRAISON">Livraison</option>
+            <option value="LOCATION">Location</option>
+            <option value="GIG/GIC">GIG/GIC</option>
+            <option value="PAYANT MIXTE">Payant mixte</option>
+            <option value="PAYANT ROTATIF">Payant rotatif</option>
+            <option value="ELECTRIQUE">Electrique</option>
           </select>
 
-          <select id="type">
+          <label for="type">Type :</label>
+          <select id="type" name="type">
             <option value="">Choisissez le type de place</option>
-            <option value="bataille">Bataille</option>
-            <option value="epi">Épi</option>
-            <option value="longitudinale">Longitudinale</option>
+            <option value="Bataille">Bataille</option>
+            <option value="Epi">Épi</option>
+            <option value="Longitudinale">Longitudinale</option>
           </select>
 
           <label for="numberFilter">Nombre de place souhaité :</label>
           <input type="number" id="numberFilter" name="numberFilter" placeholder="0" class="inputBarre">
 
-          <div>
+          <p for="taille" >Taille :</p>
+          <div id="taille" class="sizeSearch">
             <input class="inputBarre" type="number" id="longueur" name="longueur" placeholder="0m">
             <p>x</p>
             <input class="inputBarre" type="number" id="largeur" name="largeur" placeholder="0m">
           </div>
 
-        </section>
+          <button type="submit" class="btnClassique applyBTN">Appliquer</button>
+
+        </form>
     </header>
 
     <main class="mainGRP">
@@ -120,7 +130,7 @@
         
         <section class="map">
 
-          <iframe src="https://opendata.paris.fr/explore/embed/dataset/stationnement-sur-voie-publique-emprises/map/?disjunctive.regpri&disjunctive.regpar&disjunctive.typsta&disjunctive.arrond&disjunctive.locsta&disjunctive.zoneres&disjunctive.parite&disjunctive.signhor&disjunctive.signvert&disjunctive.confsign&disjunctive.typemob&sort=-regpri&basemap=jawg.dark&location=12,48.85997,2.35828&static=false&datasetcard=false&scrollWheelZoom=false" width="500" height="400" frameborder="0"></iframe>
+          <iframe src="https://opendata.paris.fr/explore/embed/dataset/stationnement-sur-voie-publique-emprises/map/?disjunctive.regpri&disjunctive.regpar&disjunctive.typsta&disjunctive.arrond&disjunctive.locsta&disjunctive.zoneres&disjunctive.parite&disjunctive.signhor&disjunctive.signvert&disjunctive.confsign&disjunctive.typemob&sort=-regpri&basemap=jawg.matrix&location=12,48.85997,2.35828&static=false&datasetcard=false&scrollWheelZoom=true" width="700" height="400" frameborder="0"></iframe>
 
         </section>
     </main>
@@ -131,3 +141,4 @@
 
   </body>
 </html>
+  >
