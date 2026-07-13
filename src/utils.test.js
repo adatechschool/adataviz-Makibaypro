@@ -61,7 +61,7 @@ export const testData = {
   ]
 };
 
-const fakeFormData = new FakeFormData({
+const fakeFormData = new URLSearchParams({
   categorie: "2 ROUES",
   type: "",
   numberFilter: "",

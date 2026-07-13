@@ -19,6 +19,7 @@ let dataGlobal = {};
 let dataFiltered = [];
 let research = "";
 
+
 const refreshDisplay = (research, formData) => {
   // --- On applique toujours les deux filtres en chaîne ---
   let result = filtre(dataGlobal, research);

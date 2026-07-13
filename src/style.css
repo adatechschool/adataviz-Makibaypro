@@ -89,6 +89,7 @@ iframe {
   grid-auto-rows: auto;
   grid-auto-columns: auto;
   width: 100%;
+  min-height: 100vh; /* ← ajouté */
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -128,8 +129,11 @@ iframe {
 }
 
 .footer {
-  height: 100%;
-  bottom: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  bottom: 0%;
   grid-row: 3;
 }
 
